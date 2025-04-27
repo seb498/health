@@ -27,7 +27,7 @@ class HealthProvider with ChangeNotifier {
     final client = _clients.firstWhere((c) => c.id == clientId);
     final program = _programs.firstWhere((p) => p.id == programId);
 
-    // ✅ Prevent duplicate enrollment
+    
     if (!client.enrolledPrograms.any((p) => p.id == programId)) {
       client.enrolledPrograms.add(program);
       notifyListeners();
