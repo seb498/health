@@ -1,16 +1,88 @@
-# health_info_system
+# Health Information System
 
-A new Flutter project.
+## Overview
+A basic Health Information System developed using Flutter, following an API-first approach. The system allows doctors to:
+- Register new clients (patients)
+- Create new health programs (e.g., TB, Malaria)
+- Enroll clients into programs
+- Search for clients
+- View client profiles and enrolled programs
+- Expose client profile information via a local API
 
-## Getting Started
+## Technologies Used
+- Flutter (Frontend + Local Backend)
+- Provider (State Management)
+- Shelf & Shelf Router (API server for local API exposure)
+- Dart programming language
+- Postman (for API testing)
 
-This project is a starting point for a Flutter application.
+## How to Run the Application
+1. **Install Flutter SDK**
+2. **Navigate to the project directory**
+```bash
+cd health_info_system
+```
+3. **Get project dependencies**
+```bash
+flutter pub get
+```
+4. **Run the application**
+```bash
+flutter run
+```
 
-A few resources to get you started if this is your first Flutter project:
+## API Usage
+- API Server runs locally on:
+```
+http://localhost:8082
+```
+- API Endpoint to retrieve a client profile:
+```
+GET /client/{client_id}
+Example: http://localhost:8082/client/123abc
+```
+- Response:
+```json
+{
+  "id": "123abc",
+  "name": "John Doe",
+  "age": 25,
+  "enrolledPrograms": [
+    {"id": "1", "name": "TB"},
+    {"id": "2", "name": "Malaria"}
+  ]
+}
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Project Structure
+```
+lib/
+|-- models/
+|   |-- client.dart
+|   |-- program.dart
+|
+|-- providers/
+|   |-- health_provider.dart
+|
+|-- screens/
+|   |-- home_screen.dart
+|   |-- add_client_screen.dart
+|   |-- add_program_screen.dart
+|   |-- client_profile_screen.dart
+|
+|-- api_server.dart
+|-- main.dart
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Future Improvements
+- Connect with a real database like Firebase
+- Add authentication and security layers
+- Deploy the API server on cloud platforms like Render or Heroku
+- Add more validations and input checks
+
+---
+
+Prepared By: [Sebastian Mutua]  
+Submission Date: [26-04-2025]  
+Assignment: Software Engineering Task
+
