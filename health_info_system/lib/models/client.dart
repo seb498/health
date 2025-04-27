@@ -10,8 +10,8 @@ class Client {
     required this.id,
     required this.name,
     required this.age,
-   List<HealthProgram>? enrolledPrograms, // Make it nullable
-}) : enrolledPrograms = enrolledPrograms ?? []; // Default to an empty list if null
+   List<HealthProgram>? enrolledPrograms, 
+}) : enrolledPrograms = enrolledPrograms ?? []; 
 
   Map<String, dynamic> toJson() => {
         'id': id,
